@@ -7,9 +7,6 @@ filetype plugin indent on
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
 
@@ -37,8 +34,14 @@ set incsearch
 " Show matching brackets when text indicator is over them
 set showmatch 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable 
+
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
