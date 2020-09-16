@@ -3,6 +3,8 @@ if [ -f ~/.bash_aliases ]; then
       . ~/.bash_aliases
 fi
 
+source ~/.bash_completion/alacritty
+
 # Use Vim
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
@@ -53,11 +55,6 @@ pathC="${txtcyn}"
 gitC="${txtpur}"
 pointerC="${txtwht}"
 normalC="${txtrst}"
-
-# Red pointer for root
-if [ "${UID}" -eq "0" ]; then
-    pointerC="${txtred}"
-fi
 
 gitBranch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'

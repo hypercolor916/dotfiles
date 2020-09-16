@@ -1,8 +1,0 @@
-#tryhackme session
-new  -s tryhackme 
-neww -n openvpn 'sudo openvpn ~/openvpn/hypercolor.ovpn'
-neww -n notes
-neww -n nmap
-neww -n enum
-neww -n sploit
-selectw -t notes

@@ -33,3 +33,5 @@ linkDotfile .vimrc
 linkDotfile .tmux.conf
 linkDotfile .bashrc
 linkDotfile .inputrc
+linkDotfile .bash_aliases 
+linkDotfile .alacritty.yml 

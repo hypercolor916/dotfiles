@@ -22,6 +22,7 @@ install xclip
 # Utilities
 install glances
 install neofetch
+install vifm
 
 # Fun stuff
 install figlet
